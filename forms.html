@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="A tracking solutions website empowering individuals for a greener tomorrow"
+    />
+    <meta
+      name="keywords"
+      content="tracking solutions, carbon emissions, CO2, green tomorrow, greener future, sustainability"
+    />
+    <title>Forms</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/assets/css/profile.css" />
+    <link rel="stylesheet" href="src/assets/css/forms.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">LepreTrackLogo</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a
+              class="navbar-brand text-capitalize"
+              id="profile"
+              href="profile.html"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="forms-container">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-home"
+            type="button"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+          >
+            Energy Form
+          </button>
+          <button
+            class="nav-link"
+            id="nav-profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-profile"
+            type="button"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+          >
+            Transport Form
+          </button>
+          <button
+            class="nav-link"
+            id="nav-contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-contact"
+            type="button"
+            role="tab"
+            aria-controls="nav-contact"
+            aria-selected="false"
+          >
+            Contact
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <form action="" class="energy_form">
+            <div class="grid">
+              <label for="elect">Electric</label>
+              <input type="number" name="electricity" id="elect" />
+              <label for="factor">with a factor of</label>
+              <input type="number" name="factor" id="factor" value="0.2111" />
+              <span>kg/C02e/kwh</span>
+            </div>
+            <div class="grid">
+              <label for="gas">Natural Gas</label>
+              <input type="number" name="gas" id="gas" />
+              <select name="units" id="">
+                <option value="kwh">KWH</option>
+              </select>
+            </div>
+            <div class="grid">
+              <label for="oil">Oil</label>
+              <input type="number" name="oil" id="oil" />
+              <select name="units" id="">
+                <option value="lt">litres</option>
+              </select>
+            </div>
+            <div class="grid">
+              <label for="coal">Coal</label>
+              <input type="number" name="coal" id="coal" />
+              <select name="units" id="">
+                <option value="tonne">Tonnes</option>
+              </select>
+            </div>
+            <div class="grid">
+              <label for="lpg"
+                ><abbr title="Liquefied Petroleum Gas">LPG</abbr></label
+              >
+              <input type="number" name="lpg" id="lpg" />
+              <select name="units" id="">
+                <option value="lt">litres</option>
+              </select>
+            </div>
+            <div class="grid">
+              <label for="propane">Propane</label>
+              <input type="number" name="propane" id="propane" />
+              <select name="units" id="">
+                <option value="lt">litres</option>
+              </select>
+            </div>
+            <div class="grid">
+              <label for="wood">Wood</label>
+              <input type="number" name="wood" id="wood" />
+              <select name="units" id="">
+                <option value="lt">Tonnes</option>
+              </select>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          <form id="transportForm" class="p-3 rounded-3 bg-light border">
+            <h4 class="mb-3"><i class="fa-solid fa-car"></i> Transport Form</h4>
+            <label for="kilometers">km/week</label>
+            <input
+              type="number"
+              id="kilometers"
+              name="kilometers"
+              required
+            /><br /><br />
+
+            <label>Type of Car:</label><br />
+            <input
+              type="radio"
+              id="electric"
+              name="carType"
+              value="electric"
+              required
+            />
+            <label for="electric">Electric</label><br />
+
+            <input
+              type="radio"
+              id="hybrid"
+              name="carType"
+              value="hybrid"
+              required
+            />
+            <label for="hybrid">Hybrid</label><br />
+
+            <input
+              type="radio"
+              id="petrol"
+              name="carType"
+              value="petrol"
+              required
+            />
+            <label for="petrol">Petrol</label><br /><br />
+
+            <label>Car Manufactured:</label><br />
+            <input
+              type="radio"
+              id="before2000"
+              name="carYear"
+              value="before"
+              required
+            />
+            <label for="before2000">Before 2000</label><br />
+
+            <input
+              type="radio"
+              id="after2000"
+              name="carYear"
+              value="after"
+              required
+            />
+            <label for="after2000">After 2000</label><br /><br />
+
+            <input type="submit" value="Submit" />
+          </form>
+
+          <div id="chart"></div>
+
+          <div class="d-flex justify-content-center text-center">
+            <!-- CarForm -->
+            <form id="flightDataForm">
+              <div>
+                <label for="totalFlights"
+                  >Total Number of Flights per Year:</label
+                >
+                <input
+                  type="number"
+                  id="totalFlights"
+                  name="totalFlights"
+                  required
+                />
+              </div>
+              <div>
+                <label for="estimatedDistance"
+                  >Estimated Distance of Flight (in miles):</label
+                >
+                <input
+                  type="number"
+                  id="estimatedDistance"
+                  name="estimatedDistance"
+                  required
+                />
+              </div>
+              <div>
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
+
+            <div id="chart2"></div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-contact"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+        >
+          ...
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="src/assets/js/transport.js"></script>
+    <script type="module" src="src/assets/js/energy.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/27545168c5.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

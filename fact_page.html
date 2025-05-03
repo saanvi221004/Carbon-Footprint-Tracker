@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon" />
+
+  <meta name="description"
+    content="A tracking solutions website empowering individuals for a greener tomorrow">
+  <meta name="keywords" content="tracking solutions, carbon emissions, CO2, green tomorrow, greener future, sustainability">  
+  <title>Facts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/assets/css/styles.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+    <div class="container-fluid">
+      <div class="logo">
+        <a class="navbar-brand" href="index.html">
+          <img class="img-fluid" src="./src/assets/images/logo.jpg" alt="logo" />
+        </a>
+      </div>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse fs-4" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-list">
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3" aria-current="page" href="index.html">Home
+              <i class="fa-solid fa-house"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3" href="fact_page.html">Learn More
+              <i class="fa-solid fa-book-open"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3" href="about.html">About Us
+              <i class="fa-solid fa-people-group"></i>
+            </a>
+          </li>
+        </ul>
+        <div id="authenticated" class="d-flex">
+          <button class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3" id="signup">
+            Signup <i class="fa-solid fa-user-plus"></i>
+          </button>
+          <button class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3" id="login">
+            Login <i class="fa-solid fa-right-to-bracket"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--facts info-->
+  <main>
+    <div class="text-center rounded p-4 bg-light container mb-4" id="slide-container">
+      <h1 id="fact-heading" class="text-uppercase">Did you know ?</h1>
+      <div class="container p-4 rounded mb-4" style="height: 400px" id="slide-item">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="text-dark">
+                Transport by Bicycle
+                <i class="mr-4 fa-solid fa-bicycle"></i>
+              </h2>
+              <hr />
+              <p class="fs-4 fs-6">
+                They found that swapping just one trip per day from driving to
+                cycling for 200 days of the year would save half a tonne of
+                carbon dioxide over the course of a year. This means that if
+                you were to swap your drive to work for cycling you would
+                drastically reduce your carbon footprint.
+              </p>
+              <a class="btn" id="bicycle"
+                href="https://www.cyclinguk.org/article/how-much-carbon-can-you-save-cycling-work#:~:text=They%20found%20that%20swapping%20just,drastically%20reduce%20your%20carbon%20footprint."
+                target="_blank" rel="noopener">Learn More</a>
+            </div>
+            <div class="carousel-item">
+              <h2 class="text-dark">
+                Energy
+                <i class="fa-solid fa-shower"></i>
+              </h2>
+              <hr />
+              <p class="fs-4 fs-6">
+                Shorter showers can also save up to 350 kilograms of carbon
+                dioxide a year and help cut down your energy bills. Pawprint
+                estimates that 10 minutes in the shower causes about 600g CO2e
+                to be released into the atmosphere. That’s 220 kg CO2e per
+                year, just on showering (if you shower once a day).
+              </p>
+              <a class="btn" id="energy"
+                href="https://www.pawprint.eco/eco-guides/how-to-reduce-carbon-footprint-morning#:~:text=Pawprint%20estimates%20that%2010%20minutes,to%20five%20minutes%20or%20less."
+                target="_blank" rel="noopener">Learn More</a>
+            </div>
+            <div class="carousel-item">
+              <h2 class="text-dark">
+                Food
+                <i class="fa-solid fa-bowl-food"></i>
+              </h2>
+              <hr />
+              <p class="fs-4 fs-6">
+                Less meat is nearly always better than sustainable meat, to
+                reduce your carbon footprint
+              </p>
+              <a class="btn mt-4" id="food" href="https://ourworldindata.org/less-meat-or-sustainable-meat"
+                target="_blank" rel="noopener">Learn More</a>
+            </div>
+            <div class="carousel-item">
+              <h2 class="text-dark">
+                Recycling
+                <i class="fa-solid fa-recycle"></i>
+              </h2>
+              <hr />
+              <p class="fs-4 fs-6">
+                Recycling helps reduce greenhouse gas emissions by reducing
+                energy consumption. Using recycled materials to make new
+                products reduces the need for virgin materials. This avoids
+                greenhouse gas emissions that would result from extracting or
+                mining virgin materials
+              </p>
+              <a class="btn" id="recycle"
+                href="https://kingcounty.gov/en/legacy/depts/dnrp/solid-waste/programs/climate/climate-change-recycling#:~:text=Recycling%20helps%20reduce%20greenhouse%20gas,extracting%20or%20mining%20virgin%20materials."
+                target="_blank" rel="noopener">Learn More</a>
+            </div>
+            <div class="carousel-item">
+              <h2 class="text-dark">
+                Transport by Bus
+                <i class="fa-solid fa-bus-simple"></i>
+              </h2>
+              <hr />
+              <p class="fs-4 fs-6">
+                Shifting from cars to public transportation can reduce up to
+                2.2 tons of carbon emissions annually per individual.
+              </p>
+              <a class="btn mt-4" id="bus"
+                href="https://www.un.org/en/actnow/transport#:~:text=Walk%2C%20bike%2C%20take%20public%20transport%2C%20or%20carpool&text=taking%20public%20transportation.-,Shifting%20from%20cars%20to%20public%20transportation%20can%20reduce%20up%20to,carbon%20emissions%20annually%20per%20individual."
+                target="_blank" rel="noopener">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div">
+        <h3>Still have questions?</h3>
+        <p>Click the below Chat Icon to ask more questions</p>
+        <section>
+          <i class="fa-solid fa-comment chat-btn"></i>
+          <div class="chat-div">
+            <form method="dialog">
+              <i class="fa-solid fa-robot h1"></i>
+
+              <label for="input-gpt">Please ask us about the environment</label>
+              <input type="text" name="input-gpt" id="input-gpt" class="input-gpt" />
+              <textarea name="gpt-output" id="gpt-output" cols="30" rows="10" class="gpt-output" disabled></textarea>
+              <div class="btn-wrapper">
+                <button type="submit" class="gpt-submit submit-btn btn-success">
+                  Submit
+                </button>
+                <button type="reset" class="reset-btn btn-success">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/assets/js/auth.js"></script>
+  <script type="module" src="/src/assets/js/navbar.js"></script>
+  <script type="module" src="/src/assets/js/learn.js"></script>
+  <script type="module" src="/src/assets/js/gpt.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/27545168c5.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

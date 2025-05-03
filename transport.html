@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="A tracking solutions website empowering individuals for a greener tomorrow"
+    />
+    <meta
+      name="keywords"
+      content="tracking solutions, carbon emissions, CO2, green tomorrow, greener future, sustainability"
+    />
+    <title>Transport</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="src/assets/css/transport.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="src/assets/css/styles.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Nav -->
+    <!-- Loader Auth Page -->
+    <div id="loader">
+      <div class="img-container">
+        <img src="src/assets/images/loading.gif" alt="Loading earth spinner" />
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <div class="container-fluid">
+        <div class="logo">
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="img-fluid"
+              src="./src/assets/images/logo.jpg"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fs-4" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-list">
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                aria-current="page"
+                href="index.html"
+                >Home <i class="fa-solid fa-house"></i
+              ></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="transport.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories <i class="fa-solid fa-sitemap"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="transport.html">Travel</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="food.html">Food</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="energy.html">Energy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="recycling.html">Community</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="fact_page.html"
+                >Learn More
+                <i class="fa-solid fa-book-open"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="about.html"
+                >About Us
+                <i class="fa-solid fa-people-group"></i>
+              </a>
+            </li>
+          </ul>
+          <div id="authenticated" class="d-flex">
+            <a
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3 text-capitalize"
+              href="dashboard.html"
+              id="profile"
+            >
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <button
+              id="logout"
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+            >
+              Log out <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="row container-row g-0">
+        <!-- First Card -->
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 px-3">
+          <div class="form-card card text-center glassmorphism">
+            <!-- <h2 class="mb-2 text-dark font-weight-bold">Flights</h2> -->
+            <div class="d-flex align-items-center justify-content-center">
+              <div id="flightChart"></div>
+              <i class="fa-solid fa-plane-departure chart-icon"></i>
+            </div>
+            <p>
+              <span
+                id="flight-result"
+                class="fw-bolder h4 counter"
+                data-to="2"
+                data-duration="1000"
+              ></span>
+              <span class="text-muted">Avg</span>
+            </p>
+
+            <form id="flightForm" class="glassmorphism mt-3">
+              <label for="flightKm">km/yearly</label>
+              <input
+                type="number"
+                id="flightKm"
+                name="flightKm"
+                required
+              /><br /><br />
+
+              <label for="numFlights">Number of Flights (yearly)</label>
+              <input
+                type="number"
+                id="numFlights"
+                name="numFlights"
+                required
+              /><br /><br />
+              <div class="wrapper mt-3">
+                <h3 class="h3">Which class do you fly?</h3>
+                <input
+                  type="radio"
+                  id="economy"
+                  name="flightClass"
+                  value="economy"
+                  required
+                />
+                <label for="economy">Economy</label><br />
+
+                <input
+                  type="radio"
+                  id="business"
+                  name="flightClass"
+                  value="business"
+                  required
+                />
+                <label for="business">Business</label><br />
+
+                <input
+                  type="radio"
+                  id="first"
+                  name="flightClass"
+                  value="first"
+                  required
+                />
+                <label for="first">First</label><br /><br />
+              </div>
+              <input
+                type="submit"
+                value="Submit"
+                class="btn btn-success text-white"
+              />
+            </form>
+          </div>
+        </div>
+
+        <!-- Second Card -->
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 px-3">
+          <div class="form-card card text-center glassmorphism">
+            <!-- <h2 class="mb-2 text-dark font-weight-bold">Car</h2> -->
+            <div class="d-flex align-items-center justify-content-center">
+              <div id="carChart"></div>
+              <i class="fa-solid fa-car chart-icon"></i>
+            </div>
+            <p>
+              <span id="car-result" class="fw-bolder h4"></span>
+              <span class="text-muted">Avg</span>
+            </p>
+            <form id="carForm" class="glassmorphism mt-3">
+              <label for="kilometers">km/week</label>
+              <input
+                type="number"
+                id="kilometers"
+                name="kilometers"
+                required
+              /><br /><br />
+
+              <div class="car-wrapper mt-3">
+                <div class="1col">
+                  <label class="h3">Type of Car:</label><br />
+                  <input
+                    type="radio"
+                    id="electric"
+                    name="carType"
+                    value="electric"
+                    required
+                  />
+                  <label for="electric">Electric</label><br />
+                  <input
+                    type="radio"
+                    id="hybrid"
+                    name="carType"
+                    value="hybrid"
+                    required
+                  />
+                  <label for="hybrid">Hybrid</label><br />
+                  <input
+                    type="radio"
+                    id="petrol"
+                    name="carType"
+                    value="petrol"
+                    required
+                  />
+                  <label for="petrol">Petrol</label><br />
+                </div>
+                <div class="2col">
+                  <label class="h3">Car Manufactured:</label><br />
+                  <input
+                    type="radio"
+                    id="before"
+                    name="carYear"
+                    value="before"
+                    required
+                  />
+                  <label for="before">Before 2000</label><br />
+                  <input
+                    type="radio"
+                    id="after"
+                    name="carYear"
+                    value="after"
+                    required
+                  />
+                  <label for="after">After 2000</label><br /><br />
+                </div>
+              </div>
+              <input
+                type="submit"
+                value="Submit"
+                class="btn btn-success text-white mt-4"
+              />
+            </form>
+          </div>
+        </div>
+
+        <!-- Third Card -->
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 px-3">
+          <div class="form-card card text-center glassmorphism">
+            <!-- <h2 class="mb-2 text-dark font-weight-bold">Transport</h2> -->
+            <div class="d-flex align-items-center justify-content-center">
+              <div id="transportChart"></div>
+              <i class="fa-solid fa-bicycle chart-icon"></i>
+            </div>
+            <p>
+              <span id="transport-result" class="fw-bolder h4"></span>
+              <span class="text-muted">Avg</span>
+            </p>
+
+            <form id="transportForm" class="glassmorphism mt-3">
+              <div>
+                <label for="driveInput">Drive:</label>
+                <input
+                  type="number"
+                  id="driveInput"
+                  name="driveInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <div>
+                <label for="carpoolInput">Carpool:</label>
+                <input
+                  type="number"
+                  id="carpoolInput"
+                  name="carpoolInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <div>
+                <label for="walkInput">Walk:</label>
+                <input
+                  type="number"
+                  id="walkInput"
+                  name="walkInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <div>
+                <label for="cycleInput">Cycle:</label>
+                <input
+                  type="number"
+                  id="cycleInput"
+                  name="cycleInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <div>
+                <label for="trainInput">Train:</label>
+                <input
+                  type="number"
+                  id="trainInput"
+                  name="trainInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <div>
+                <label for="busInput">Bus:</label>
+                <input
+                  type="number"
+                  id="busInput"
+                  name="busInput"
+                  min="0"
+                  max="100"
+                  value="0"
+                  required
+                />
+                <span>%</span>
+              </div>
+              <input
+                type="submit"
+                value="Submit"
+                class="btn btn-success text-white mt-4"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-4">
+        <div class="card">
+          <div id="chart"></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="w-100 card footer">
+        <div class="card-body">
+          <div class="card-title text-center fw-bold my-auto">
+            &copy;2023 GreenStep
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="src/assets/js/transport.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/27545168c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'none';
+        }
+      });
+    </script>    
+  </body>
+</html>

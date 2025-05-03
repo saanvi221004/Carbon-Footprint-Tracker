@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="A tracking solutions website empowering individuals for a greener tomorrow"
+    />
+    <meta
+      name="keywords"
+      content="tracking solutions, carbon emissions, CO2, green tomorrow, greener future, sustainability"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/assets/css/food.css" type="text/css" />
+    <link rel="stylesheet" href="src/assets/css/styles.css" type="text/css" />
+    <title>Lepre-Track App</title>
+  </head>
+
+  <body>
+    <!-- Loader Auth Page -->
+    <div id="loader">
+      <div class="img-container">
+        <img src="src/assets/images/loading.gif" alt="Loading earth spinner" />
+      </div>
+    </div>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <div class="container-fluid">
+        <div class="logo">
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="img-fluid"
+              src="./src/assets/images/logo.jpg"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fs-4" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-list">
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                aria-current="page"
+                href="index.html"
+                >Home <i class="fa-solid fa-house"></i
+              ></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="food.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories <i class="fa-solid fa-sitemap"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="transport.html">Travel</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="food.html">Food</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="energy.html">Energy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="recycling.html">Community</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="fact_page.html"
+                >Learn More
+                <i class="fa-solid fa-book-open"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="about.html"
+                >About Us
+                <i class="fa-solid fa-people-group"></i>
+              </a>
+            </li>
+          </ul>
+          <div id="authenticated" class="d-flex">
+            <a
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3 text-capitalize"
+              href="dashboard.html"
+              id="profile"
+            >
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <button
+              id="logout"
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+            >
+              Log out <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="container mt-5">
+        <div class="row container-row">
+          <h1>Carbon Dietary Calculator</h1>
+          <!-- First Card -->
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card text-center">
+              <div
+                class="d-flex align-items-center justify-content-center item-parent position-relative"
+              >
+                <div id="dietChart"></div>
+                <i class="fa-solid fa-pizza-slice chart-icon"></i>
+              </div>
+              <p>
+                <span
+                  id="diet-result"
+                  class="fw-bolder h4 counter"
+                  data-to="0"
+                  data-duration="1000"
+                ></span>
+              </p>
+              <form id="diet-form">
+                <div>
+                  <label for="diet">Choose your diet:</label>
+                  <select id="diet" name="diet">
+                    <option value="carnivore">Carnivore</option>
+                    <option value="omnivore">Omnivore</option>
+                    <option value="pescatarian">Pescatarian</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="calories">Avg Daily Calories</label>
+                  <input
+                    type="number"
+                    id="calories"
+                    name="calories"
+                    required
+                    value="0"
+                  />
+                </div>
+                <button type="submit" class="submit-btn">
+                  Calculate Impact %
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Second Card -->
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card text-center">
+              <div class="d-flex align-items-center justify-content-center">
+                <div id="farmingChart"></div>
+                <i class="fa-solid fa-seedling chart-icon"></i>
+              </div>
+              <p>
+                <span
+                  id="farming-result"
+                  class="fw-bolder h4 counter"
+                  data-to="0"
+                  data-duration="1000"
+                ></span>
+              </p>
+              <form id="farming-form">
+                <div>
+                  <label for="local">Do you shop locally?</label>
+                  <input type="checkbox" id="local" name="local" />
+                </div>
+                <div>
+                  <label for="produce">% Local Produce</label>
+                  <input
+                    type="number"
+                    id="produce"
+                    name="produce"
+                    required
+                    value="0"
+                  />
+                </div>
+                <div>
+                  <label for="organic">% Organic/Regenrative Agr</label>
+                  <input
+                    type="number"
+                    id="organic"
+                    name="organic"
+                    required
+                    value="0"
+                  />
+                </div>
+                <div>
+                  <label for="seasonal"
+                    >Do you mostly eat seasonal fruit/veg</label
+                  >
+                  <input type="checkbox" id="seasonal" name="seasonal" />
+                </div>
+                <div>
+                  <label for="crop">Do you grow your own crop</label>
+                  <input type="checkbox" id="crop" name="crop" />
+                </div>
+                <button type="submit" class="submit-btn">
+                  Calculate Impact %
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Third Card -->
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card text-center">
+              <div class="d-flex align-items-center justify-content-center">
+                <div id="diningChart"></div>
+                <i class="fa-solid fa-utensils chart-icon"></i>
+              </div>
+              <p>
+                <span
+                  id="dining-result"
+                  class="fw-bolder h4 counter"
+                  data-to="0"
+                  data-duration="1000"
+                ></span>
+              </p>
+              <form id="dining-form">
+                <div>
+                  <label for="dineout">Do you eat out weekly?</label>
+                  <input type="checkbox" id="dineout" name="dineout" />
+                </div>
+                <div>
+                  <label for="waste">Do you regularly waste food?</label>
+                  <input type="checkbox" id="waste" name="waste" />
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  Calculate Impact %
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/27545168c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'none';
+        }
+      });
+    </script>
+    <script type="module" src="src/assets/js/food.js"></script>    
+  </body>
+</html>

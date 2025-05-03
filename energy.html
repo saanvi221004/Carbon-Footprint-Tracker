@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="A tracking solutions website empowering individuals for a greener tomorrow"
+    />
+    <meta
+      name="keywords"
+      content="tracking solutions, carbon emissions, CO2, green tomorrow, greener future, sustainability"
+    />
+    <title>Energy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/assets/css/styles.css" />
+    <link rel="stylesheet" href="src/assets/css/forms.css" />
+  </head>
+
+  <body>
+    <!-- Loader Auth Page -->
+    <div id="loader">
+      <div class="img-container">
+        <img src="src/assets/images/loading.gif" alt="Loading earth spinner" />
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <div class="container-fluid">
+        <div class="logo">
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="img-fluid"
+              src="./src/assets/images/logo.jpg"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fs-4" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-list">
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                aria-current="page"
+                href="index.html"
+                >Home <i class="fa-solid fa-house"></i
+              ></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="energy.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories <i class="fa-solid fa-sitemap"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="transport.html">Travel</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="food.html">Food</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="energy.html">Energy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="recycling.html">Community</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="fact_page.html"
+                >Learn More
+                <i class="fa-solid fa-book-open"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="recycling.html"
+                >Recycling
+                <i class="fa-solid fa-recycle"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+                href="about.html"
+                >About Us
+                <i class="fa-solid fa-people-group"></i>
+              </a>
+            </li>
+          </ul>
+          <div id="authenticated" class="d-flex">
+            <a
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3 text-capitalize"
+              href="dashboard.html"
+              id="profile"
+            >
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <button
+              id="logout"
+              class="nav-link btn btn-success text-white m-1 ms-0 mx-2 px-3"
+            >
+              Log out <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="w-100 card glassmorphism-title">
+        <div class="card-body">
+          <h1 class="card-title text-center">Energy</h1>
+        </div>
+      </div>
+      <div class="row container-row">
+        <div class="col-sm-12 mb-4 mt-4">
+          <div class="card text-center glassmorphism">
+            <div class="d-flex align-items-center justify-content-center">
+              <div id="energyChart"></div>
+              <i class="fa-solid fa-plug-circle-exclamation chart-icon"></i>
+            </div>
+            <p>
+              <span
+                id="energy-result"
+                class="fw-bolder h4 counter"
+                data-to="2"
+                data-duration="1000"
+              >
+              </span>
+            </p>
+            <form id="energyForm" class="">
+              <h5 class="mb-2 fw-bold text-dark">
+                What is your yearly energy consumption?
+              </h5>
+              <div class="form-check">
+                <label for="elec">Electric</label>
+                <input type="number" name="elec" id="elec" />
+                <div>
+                  <label for="factor">with a factor of</label>
+                  <input
+                    type="number"
+                    name="factor"
+                    id="factor"
+                    value="0.2111"
+                  />
+                  <span
+                    ><abbr title="kilogram">KG</abbr>/<abbr
+                      title="Carbon Dioxide Equivalent
+                        "
+                      >C02e</abbr
+                    >/<abbr title=" kilowatt hour">KWH</abbr></span
+                  >
+                </div>
+              </div>
+              <div class="form-check">
+                <label for="gas">Natural Gas</label>
+                <input type="number" name="gas" id="gas" />
+                <p>in <abbr title=" kilowatt hour">KWH</abbr></p>
+              </div>
+              <div class="form-check">
+                <label for="oil">Oil</label>
+                <input type="number" name="oil" id="oil" />
+                <p>in <abbr title="Litre">LT</abbr></p>
+              </div>
+              <div class="form-check">
+                <label for="coal">Coal</label>
+                <input type="number" name="coal" id="coal" />
+                <p>in Tonnes</p>
+              </div>
+              <div class="form-check">
+                <label for="lpg"
+                  ><abbr title="Liquefied petroleum gas">LPG</abbr></label
+                >
+                <input type="number" name="lpg" id="lpg" />
+                <p>in <abbr title="Litre">LT</abbr></p>
+              </div>
+              <div class="form-check">
+                <label for="propane">Propane</label>
+                <input type="number" name="propane" id="propane" />
+                <p>in <abbr title=" kilowatt hour">KWH</abbr></p>
+              </div>
+              <div class="form-check grid">
+                <label for="wood">Wood</label>
+                <input type="number" name="wood" id="wood" />
+                <p>in Tonnes</p>
+              </div>
+              <button type="submit" class="submit-btn" value="Submit">
+                Calculate Impact %
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="src/assets/js/energy.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/27545168c5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.style.display = 'none';
+        }
+      });
+    </script>
+    
+  </body>
+</html>
