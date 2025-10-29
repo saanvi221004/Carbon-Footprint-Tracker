@@ -3,12 +3,11 @@
 </h1>
 
 <p align="center">
-<img src="src/assets/images/logo.jpg" alt="Lepre-Track Logo">
+
 
 </p>
 
-#  ♻️ DEPLOYMENT
-🚀 Lepre-Track is live and can be accessed ➡️ [Lepre-Track Link](https://lepretrack.netlify.app/).
+
  
 # ♻️ ABOUT LEPRE-TRACK
 ## Intro
